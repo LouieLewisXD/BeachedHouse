@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnhjnujl7wcuj"]
+
+[ext_resource type="Texture2D" uid="uid://cce6hgfdvr7wx" path="res://assets/images/tree.png" id="1_avsvi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avsvi"]
+radius = 21.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vplca"]
+size = Vector2(12, 8)
+
+[node name="Area2D" type="Area2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -28)
+texture = ExtResource("1_avsvi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_avsvi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_vplca")
